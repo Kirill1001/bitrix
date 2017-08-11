@@ -1,0 +1,26 @@
+# Исключаем ядро и некоторые файлы
+bitrix/
+upload/
+
+#Настройки проекта
+.idea/
+
+#Исключаем ненужные файлы
+*.csv
+*.gz
+*.tar
+*.bat
+*.dat
+*.pdf
+*.psd
+*.log
+*.txt
+!robots.txt
+*.flv
+*.wmv
+*.xlsx
+*.xls
+*.docx
+*.doc
+*.phar
+*.mmdb
