@@ -1,0 +1,50 @@
+[
+    {
+        "id": "43",
+        "name": "kids blue jacket",
+        "description": "lorem ipsum dolor sit amet",
+        "img": "img/product/kids-3.png",
+        "price": "$18",
+        "category": "kids"
+    },
+    {
+        "id": "44",
+        "name": "kids dark-blue jacket",
+        "description": "lorem ipsum dolor sit amet",
+        "img": "img/product/kids-4.png",
+        "price": "$19",
+        "category": "kids"
+    },
+    {
+        "id": "45",
+        "name": "kids pink jacket",
+        "description": "lorem ipsum dolor sit amet",
+        "img": "img/product/women-3.png",
+        "price": "$17",
+        "category": "kids"
+    },
+    {
+        "id": "46",
+        "name": "kids light-blue jacket",
+        "description": "lorem ipsum dolor sit amet",
+        "img": "img/product/women-4.png",
+        "price": "$26",
+        "category": "kids"
+    },
+    {
+        "id": "47",
+        "name": "kids orange snickers",
+        "description": "lorem ipsum dolor sit amet",
+        "img": "img/product/men-3.png",
+        "price": "$28",
+        "category": "kids"
+    },
+    {
+        "id": "48",
+        "name": "kids dark-blue snickers",
+        "description": "lorem ipsum dolor sit amet",
+        "img": "img/product/men-4.png",
+        "price": "$22",
+        "category": "kids"
+    }
+]
