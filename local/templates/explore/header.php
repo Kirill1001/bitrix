@@ -1,23 +1,28 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();//проверка?>
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();//проверка?>
+<?php use Bitrix\Main\Page\Asset; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?$APPLICATION->ShowHead();//подключение скриптов?>
+    <?php $APPLICATION->ShowMeta("keywords")?>
+    <?php $APPLICATION->ShowMeta("description")?>
+    <?php $APPLICATION->ShowCSS()?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title><?$APPLICATION->ShowTitle()?></title>
-    <?
-        use Bitrix\Main\Page\Asset;
-
+	<title><?php $APPLICATION->ShowTitle()?></title>
+    <?php
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/css/normalize.css");
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/css/bootstrap-grid.min.css");
         Asset::getInstance()->addCss("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
         Asset::getInstance()->addCss("https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css");
+
+        Asset::getInstance()->addJs("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js");
+        Asset::getInstance()->addJs("https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js");
+        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/script.js");
     ?>
 		</head>
 		<body>
-        <?$APPLICATION->ShowPanel();?>
+        <?php $APPLICATION->ShowPanel();?>
 			<div class="wrapper">
                 <!-- / ========= header ========= \ -->
                 <header class="header">
@@ -25,17 +30,15 @@
                         <div class="header-flex">
                             <?php
                             $curPage = $APPLICATION->GetCurPage(true);
-                            if (
-                                $curPage == SITE_DIR."index.php"
-                            ){?>
+                            if ($curPage == SITE_DIR."index.php"){?>
 
                                 <div class="logo"><span>ex</span>plore</div>
 
-                            <?}else{?>
+                            <?php } else {?>
 
                                 <div class="logo"><a href="/"><span>ex</span>plore</a></div>
 
-                            <?}?>
+                            <?php } ?>
                             <ul class="nav">
                                 <li class="nav__item">
                                     <a href="#" class="nav__link active">Home</a>

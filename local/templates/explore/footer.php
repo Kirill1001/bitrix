@@ -105,14 +105,7 @@
 					</div>
 				</div>
 			</footer>
-
-		<!-- / ========= scripts ========= \ -->
-        <?
-            use Bitrix\Main\Page\Asset;
-
-            Asset::getInstance()->addJs("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js");
-            Asset::getInstance()->addJs("https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js");
-            Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/script.js");
-        ?>
+            <?php $APPLICATION->ShowHeadStrings();?>
+            <?php $APPLICATION->ShowHeadScripts();?>
 	</body>
 	</html>
