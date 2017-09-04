@@ -1,5 +1,12 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-			<footer class="footer">
+<?php
+$curPage = $APPLICATION->GetCurPage(true);
+if ($curPage != SITE_DIR."index.php"){?>
+
+</div>
+
+<?php } ?>
+            <footer class="footer">
 				<div class="container">
 					<div class="row justify-content-between border-bottom">
 						<div class="col-12 col-lg-3 margin-phone">

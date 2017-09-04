@@ -56,16 +56,37 @@
                                     <a href="#" class="nav__link">Blog</a>
                                 </li>
                             </ul>
-                            <div class="account">
-                                <div class="account__cart">
-                                    <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/header_cart.png" alt=""></a>
-                                    <span class="account__badge">0</span>
-                                </div>
-                                <a href="#" class="account__btn">
-                                    My Account
-                                </a>
-                            </div>
+                            <?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line","",Array(
+                                    "HIDE_ON_BASKET_PAGES" => "Y",
+                                    "PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+                                    "PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
+                                    "PATH_TO_PERSONAL" => SITE_DIR."personal/",
+                                    "PATH_TO_PROFILE" => SITE_DIR."personal/",
+                                    "PATH_TO_REGISTER" => SITE_DIR."login/",
+                                    "POSITION_FIXED" => "Y",
+                                    "POSITION_HORIZONTAL" => "right",
+                                    "POSITION_VERTICAL" => "top",
+                                    "SHOW_AUTHOR" => "Y",
+                                    "SHOW_DELAY" => "N",
+                                    "SHOW_EMPTY_VALUES" => "Y",
+                                    "SHOW_IMAGE" => "Y",
+                                    "SHOW_NOTAVAIL" => "N",
+                                    "SHOW_NUM_PRODUCTS" => "Y",
+                                    "SHOW_PERSONAL_LINK" => "N",
+                                    "SHOW_PRICE" => "Y",
+                                    "SHOW_PRODUCTS" => "Y",
+                                    "SHOW_SUMMARY" => "Y",
+                                    "SHOW_TOTAL_PRICE" => "Y"
+                                )
+                            );?>
                             <a href="#" class="phone-menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </header>
+                <?php
+                $curPage = $APPLICATION->GetCurPage(true);
+                if ($curPage != SITE_DIR."index.php"){?>
+
+                    <div class="container mt-8">
+
+                <?php } ?>
