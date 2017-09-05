@@ -1,11 +1,11 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?php
 $curPage = $APPLICATION->GetCurPage(true);
-if ($curPage != SITE_DIR."index.php"){?>
+if ($curPage != SITE_DIR."index.php"): ?>
 
 </div>
 
-<?php } ?>
+<?php endif; ?>
             <footer class="footer">
 				<div class="container">
 					<div class="row justify-content-between border-bottom">
@@ -112,7 +112,11 @@ if ($curPage != SITE_DIR."index.php"){?>
 					</div>
 				</div>
 			</footer>
-            <?php $APPLICATION->ShowHeadStrings();?>
-            <?php $APPLICATION->ShowHeadScripts();?>
+<?
+    if ($bScriptInFooter) {
+        $APPLICATION->ShowHeadStrings();
+        $APPLICATION->ShowHeadScripts();
+    }
+?>
 	</body>
 	</html>
