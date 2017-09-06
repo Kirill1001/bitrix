@@ -12,66 +12,60 @@
 						</div>
 
 						<div class="col-4 col-lg-1 margin-phone">
-							<ul class="site-link">
-								<li class="title">help</li>
-								<li>
-									<a href="#">Newsletter</a>
-								</li>
-								<li>
-									<a href="#">Blog</a>
-								</li>
-								<li>
-									<a href="#">Get paid</a>
-								</li>
-								<li>
-									<a href="#">Sign in</a>
-								</li>
-								<li>
-									<a href="#">Sign up</a>
-								</li>
-							</ul>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:menu",
+                                "bottom.menu",
+                                Array(
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "DELAY" => "N",
+                                    "MAX_LEVEL" => "1",
+                                    "MENU_CACHE_GET_VARS" => array(""),
+                                    "MENU_CACHE_TIME" => "3600",
+                                    "MENU_CACHE_TYPE" => "N",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "ROOT_MENU_TYPE" => "bottom.help",
+                                    "USE_EXT" => "N"
+                                )
+                            );?>
 						</div>
 
 						<div class="col-4 col-lg-1 margin-phone">
-							<ul class="site-link">
-								<li class="title">follow</li>
-								<li>
-									<a href="#">Twitter</a>
-								</li>
-								<li>
-									<a href="#">Facebook</a>
-								</li>
-								<li>
-									<a href="#">Instagrap</a>
-								</li>
-								<li>
-									<a href="#">Pinterest</a>
-								</li>
-								<li>
-									<a href="#">Behance</a>
-								</li>
-							</ul>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:menu",
+                                "bottom.menu",
+                                Array(
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "DELAY" => "N",
+                                    "MAX_LEVEL" => "1",
+                                    "MENU_CACHE_GET_VARS" => array(""),
+                                    "MENU_CACHE_TIME" => "3600",
+                                    "MENU_CACHE_TYPE" => "N",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "ROOT_MENU_TYPE" => "bottom.follow",
+                                    "USE_EXT" => "N"
+                                )
+                            );?>
 						</div>
 
 						<div class="col-4 col-lg-1 margin-phone">
-							<ul class="site-link">
-								<li class="title">explore</li>
-								<li>
-									<a href="#">Features</a>
-								</li>
-								<li>
-									<a href="#">Privacy</a>
-								</li>
-								<li>
-									<a href="#">Features</a>
-								</li>
-								<li>
-									<a href="#">Privacy</a>
-								</li>
-								<li>
-									<a href="#">Privacy</a>
-								</li>
-							</ul>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:menu",
+                                "bottom.menu",
+                                Array(
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "DELAY" => "N",
+                                    "MAX_LEVEL" => "1",
+                                    "MENU_CACHE_GET_VARS" => array(""),
+                                    "MENU_CACHE_TIME" => "3600",
+                                    "MENU_CACHE_TYPE" => "N",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "ROOT_MENU_TYPE" => "bottom.explore",
+                                    "USE_EXT" => "N"
+                                )
+                            );?>
 						</div>
 
 						<div class="col-9 col-lg-3">

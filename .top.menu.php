@@ -35,12 +35,12 @@ $aMenuLinks = Array(
 		Array(),
 		""
 	),
-	Array(
-		"Мой кабинет",
-		"personal/",
-		Array(),
-		Array(),
-		"CUser::IsAuthorized()"
-	),
+    Array(
+        "Мой кабинет",
+        "personal/",
+        Array(),
+        Array(),
+        "CUser::IsAuthorized()"
+    ),
 );
 ?>
