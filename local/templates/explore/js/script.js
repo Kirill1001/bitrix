@@ -111,3 +111,35 @@ $(function(){
 });
 
 });
+
+//Ajax authorization in footer
+
+$(document).ready(function(){
+	let error = $('.sign-up .error');
+
+    $('.sign-up input[type=submit]').click(function(e){
+    	let data = {
+            mode: 'login',
+            login: $('.sign-up input[name=login]').val(),
+            password: $('.sign-up input[name=password]').val()
+        };
+        $.ajax({
+            type: 'POST',
+            url: 'ajax/ajax.php',
+            data: data,
+            dataType: 'json',
+            success: function(result){
+                if (result.status === 'success') {
+                    location.reload();
+                }
+                else {
+                        error.html(result.message);
+                        error.show();
+				}
+			}
+        });
+        e.preventDefault();
+        return false;
+    });
+
+});

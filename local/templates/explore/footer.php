@@ -90,9 +90,10 @@ if ($curPage != SITE_DIR."index.php"): ?>
 						<div class="col-9 col-lg-3">
 							<div class="sign-up">
 								<div class="title">sign up</div>
-								<form action="">
-									<input type="email" placeholder="duecreation@gmail.com">
-									<input type="password" placeholder="password">
+								<form>
+                                    <div class="message error"></div>
+									<input type="text" name="login" placeholder="duecreation@gmail.com">
+									<input type="password" name="password" placeholder="password">
 									<input type="submit" value="Go!">
 								</form>
 							</div>
