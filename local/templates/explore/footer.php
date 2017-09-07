@@ -1,4 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+            </div>
+
 			<footer class="footer">
 				<div class="container">
 					<div class="row justify-content-between border-bottom">
@@ -112,7 +114,5 @@
 					</div>
 				</div>
 			</footer>
-            <?php $APPLICATION->ShowHeadStrings();?>
-            <?php $APPLICATION->ShowHeadScripts();?>
 	</body>
 	</html>

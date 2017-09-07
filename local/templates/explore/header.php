@@ -6,6 +6,8 @@
     <?php $APPLICATION->ShowMeta("keywords")?>
     <?php $APPLICATION->ShowMeta("description")?>
     <?php $APPLICATION->ShowCSS()?>
+    <?php $APPLICATION->ShowHeadStrings();?>
+    <?php $APPLICATION->ShowHeadScripts();?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,23 +41,25 @@
                                 <div class="logo"><a href="/"><span>ex</span>plore</a></div>
 
                             <?php } ?>
-                            <ul class="nav">
-                                <li class="nav__item">
-                                    <a href="#" class="nav__link active">Home</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a href="#" class="nav__link">Mens</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a href="#" class="nav__link">Womens</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a href="#" class="nav__link">Kids</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a href="#" class="nav__link">Blog</a>
-                                </li>
-                            </ul>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:menu",
+                                "top",
+                                array(
+                                    "ALLOW_MULTI_SELECT" => "N",
+                                    "CHILD_MENU_TYPE" => "left",
+                                    "DELAY" => "N",
+                                    "MAX_LEVEL" => "1",
+                                    "MENU_CACHE_GET_VARS" => array(
+                                    ),
+                                    "MENU_CACHE_TIME" => "3600",
+                                    "MENU_CACHE_TYPE" => "N",
+                                    "MENU_CACHE_USE_GROUPS" => "Y",
+                                    "ROOT_MENU_TYPE" => "top",
+                                    "USE_EXT" => "Y",
+                                    "COMPONENT_TEMPLATE" => "top"
+                                ),
+                                false
+                            );?>
                             <div class="account">
                                 <div class="account__cart">
                                     <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/header_cart.png" alt=""></a>
