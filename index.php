@@ -884,8 +884,4 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         </div>
     </section>
 
-
-
-
-    </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

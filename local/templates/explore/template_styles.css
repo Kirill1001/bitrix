@@ -170,8 +170,9 @@ footer {
   color: #555f76;
   font-size: 1.3rem;
   font-weight: 700; }
-  .nav__link:hover {
-    color: #36c2ff; }
+  .nav__item .nav__link:hover {
+    color: #36c2ff;
+    background-color: transparent; }
   @media screen and (max-width: 576px) {
     .nav__link {
       font-size: 1.7rem; } }
@@ -421,6 +422,11 @@ footer {
 .categories a:hover {
   color: #43537b; }
 
+.products-list-catalog {
+  margin-top: 8rem;
+}
+
+.products-list-catalog,
 .products-list-all,
 .products-list-mens,
 .products-list-womens,
