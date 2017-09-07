@@ -1,4 +1,14 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?php
+$curPage = $APPLICATION->GetCurPage(true);
+if ($curPage != SITE_DIR."index.php"): ?>
+
+</div>
+
+<?php endif; ?>
+
+            </div>
+
 			<footer class="footer">
 				<div class="container">
 					<div class="row justify-content-between border-bottom">
@@ -7,7 +17,16 @@
 								<a href="#" class="title">
 									explore
 								</a>
-								<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book survived not</p>
+                                    <?$APPLICATION->IncludeComponent(
+                                        "bitrix:main.include",
+                                        "",
+                                        Array(
+                                            "AREA_FILE_SHOW" => "file",
+                                            "AREA_FILE_SUFFIX" => "",
+                                            "EDIT_TEMPLATE" => "",
+                                            "PATH" => "/include/footer_descr.php"
+                                        )
+                                    );?>
 							</div>
 						</div>
 
@@ -81,25 +100,27 @@
 
 					</div>
 					<div class="copyright">
-						<ul class="social">
-							<li>
-								<a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-							</li>
-						</ul>
+                        <div>
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/include/footer_social.php"
+                                )
+                            );?>
+                        </div>
 						<p>&#64;Copyright 2015 explore All right reserved</p>
 					</div>
 				</div>
 			</footer>
-            <?php $APPLICATION->ShowHeadStrings();?>
-            <?php $APPLICATION->ShowHeadScripts();?>
+<?
+    if ($bScriptInFooter) {
+        $APPLICATION->ShowHeadStrings();
+        $APPLICATION->ShowHeadScripts();
+    }
+?>
 	</body>
 	</html>

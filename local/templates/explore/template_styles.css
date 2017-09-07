@@ -34,6 +34,9 @@ body {
   padding: 0 1.5rem;
   max-width: 1030px; }
 
+.mt-8 {
+  margin-top: 8rem; }
+
 h1, h2 {
   margin: 0;
   padding: 0;
@@ -167,8 +170,9 @@ footer {
   color: #555f76;
   font-size: 1.3rem;
   font-weight: 700; }
-  .nav__link:hover {
-    color: #36c2ff; }
+  .nav__item .nav__link:hover {
+    color: #36c2ff;
+    background-color: transparent; }
   @media screen and (max-width: 576px) {
     .nav__link {
       font-size: 1.7rem; } }
@@ -210,21 +214,16 @@ footer {
   vertical-align: middle;
   width: 1.2rem; }
 
-.account__btn {
-  color: #555f76;
-  border: 1px solid #555f76;
+.account .account__btn {
+  border: 1px solid #fff;
   -webkit-border-radius: 3px;
           border-radius: 3px;
-  font-size: 1.2rem;
   padding: 0.5rem 1rem; }
-  .account__btn::after {
-    content: '\f107';
-    font-family: Fontawesome;
-    margin-left: 1.8rem; }
 
-.account__btn:hover {
+.account .account__btn a {
   color: #fff;
-  border-color: #fff; }
+  font-size: 1.2rem;
+}
 
 .phone-menu {
   display: none; }
@@ -423,6 +422,11 @@ footer {
 .categories a:hover {
   color: #43537b; }
 
+.products-list-catalog {
+  margin-top: 8rem;
+}
+
+.products-list-catalog,
 .products-list-all,
 .products-list-mens,
 .products-list-womens,
