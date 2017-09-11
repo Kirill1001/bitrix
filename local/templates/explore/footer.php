@@ -17,7 +17,7 @@ if ($curPage != SITE_DIR."index.php"): ?>
 								<a href="#" class="title">
 									explore
 								</a>
-                                    <?$APPLICATION->IncludeComponent(
+                                    <?php $APPLICATION->IncludeComponent(
                                         "bitrix:main.include",
                                         "",
                                         Array(
