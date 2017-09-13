@@ -111,3 +111,23 @@ $(function(){
 });
 
 });
+
+//Add to cart ajax
+
+$(".order-btn-small").on('click', function(e){
+	console.log('!!!');
+    $.ajax({
+        type: "POST",
+        url: 'ajax/cart.php',
+        data: {
+        	ID: $('.product-id').attr(value),
+			QUANTITY: $('.product-quan').attr(value)
+		},
+        success: function(out){
+
+            alert("Товар добавлен в корзину");
+        }
+    });
+    e.preventDefault();
+    return false;
+});

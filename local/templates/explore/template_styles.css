@@ -282,6 +282,12 @@ footer {
 .feature-descr {
   margin-bottom: 6rem; }
 
+.feature .owl-carousel .owl-item img {
+  display: block;
+  width: auto;
+  max-height: 27.5rem;
+}
+
 .feature-items {
   display: -webkit-box;
   display: -webkit-flex;
@@ -298,6 +304,9 @@ footer {
       -webkit-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
               flex-wrap: wrap; } }
+
+.feature-items .item:hover .product__overlay {
+  opacity: 1; }
 
 .item {
   background-color: #fff;
