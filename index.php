@@ -10,878 +10,323 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         </div>
     </section>
 
-    <!-- / ========= feature ========= \ -->
-    <section class="feature">
-        <div class="container">
-            <h2 class="section-title">
-                featured items
-            </h2>
-            <p class="section-descr feature-descr text-center">
-                Let’s see featured items!
-            </p>
-            <div class="owl-carousel feature-items">
+    <!-- / ========= catalog ========= \ -->
+<?$APPLICATION->IncludeComponent(
+    "bitrix:catalog",
+    "catalog",
+    Array(
+        "ACTION_VARIABLE" => "action",
+        "ADD_ELEMENT_CHAIN" => "N",
+        "ADD_PICT_PROP" => "-",
+        "ADD_PROPERTIES_TO_BASKET" => "Y",
+        "ADD_SECTIONS_CHAIN" => "Y",
+        "AJAX_MODE" => "Y",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "BASKET_URL" => "/personal/basket.php",
+        "BIG_DATA_RCM_TYPE" => "personal",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "COMMON_ADD_TO_BASKET_ACTION" => "ADD",
+        "COMMON_SHOW_CLOSE_POPUP" => "N",
+        "COMPATIBLE_MODE" => "Y",
+        "CONVERT_CURRENCY" => "N",
+        "DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
+        "DETAIL_ADD_TO_BASKET_ACTION" => array("BUY"),
+        "DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array("BUY"),
+        "DETAIL_BACKGROUND_IMAGE" => "-",
+        "DETAIL_BRAND_USE" => "N",
+        "DETAIL_BROWSER_TITLE" => "-",
+        "DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
+        "DETAIL_DETAIL_PICTURE_MODE" => array("POPUP", "MAGNIFIER"),
+        "DETAIL_DISPLAY_NAME" => "Y",
+        "DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
+        "DETAIL_IMAGE_RESOLUTION" => "16by9",
+        "DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(),
+        "DETAIL_META_DESCRIPTION" => "-",
+        "DETAIL_META_KEYWORDS" => "-",
+        "DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
+        "DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
+        "DETAIL_PROPERTY_CODE" => array("", ""),
+        "DETAIL_SET_CANONICAL_URL" => "N",
+        "DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
+        "DETAIL_SHOW_POPULAR" => "Y",
+        "DETAIL_SHOW_SLIDER" => "N",
+        "DETAIL_SHOW_VIEWED" => "Y",
+        "DETAIL_STRICT_SECTION_CHECK" => "N",
+        "DETAIL_USE_COMMENTS" => "N",
+        "DETAIL_USE_VOTE_RATING" => "N",
+        "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "ELEMENT_SORT_FIELD" => "sort",
+        "ELEMENT_SORT_FIELD2" => "id",
+        "ELEMENT_SORT_ORDER" => "asc",
+        "ELEMENT_SORT_ORDER2" => "desc",
+        "FILTER_HIDE_ON_MOBILE" => "N",
+        "FILTER_VIEW_MODE" => "VERTICAL",
+        "GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",
+        "GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",
+        "GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "4",
+        "GIFTS_DETAIL_TEXT_LABEL_GIFT" => "Подарок",
+        "GIFTS_MAIN_PRODUCT_DETAIL_BLOCK_TITLE" => "Выберите один из товаров, чтобы получить подарок",
+        "GIFTS_MAIN_PRODUCT_DETAIL_HIDE_BLOCK_TITLE" => "N",
+        "GIFTS_MAIN_PRODUCT_DETAIL_PAGE_ELEMENT_COUNT" => "4",
+        "GIFTS_MESS_BTN_BUY" => "Выбрать",
+        "GIFTS_SECTION_LIST_BLOCK_TITLE" => "Подарки к товарам этого раздела",
+        "GIFTS_SECTION_LIST_HIDE_BLOCK_TITLE" => "N",
+        "GIFTS_SECTION_LIST_PAGE_ELEMENT_COUNT" => "4",
+        "GIFTS_SECTION_LIST_TEXT_LABEL_GIFT" => "Подарок",
+        "GIFTS_SHOW_DISCOUNT_PERCENT" => "Y",
+        "GIFTS_SHOW_IMAGE" => "Y",
+        "GIFTS_SHOW_NAME" => "Y",
+        "GIFTS_SHOW_OLD_PRICE" => "Y",
+        "HIDE_NOT_AVAILABLE" => "N",
+        "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+        "IBLOCK_ID" => "1",
+        "IBLOCK_TYPE" => "catalog",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "INSTANT_RELOAD" => "N",
+        "LABEL_PROP" => array(),
+        "LAZY_LOAD" => "N",
+        "LINE_ELEMENT_COUNT" => "3",
+        "LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
+        "LINK_IBLOCK_ID" => "",
+        "LINK_IBLOCK_TYPE" => "",
+        "LINK_PROPERTY_SID" => "",
+        "LIST_BROWSER_TITLE" => "-",
+        "LIST_ENLARGE_PRODUCT" => "STRICT",
+        "LIST_META_DESCRIPTION" => "-",
+        "LIST_META_KEYWORDS" => "-",
+        "LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons,compare",
+        "LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+        "LIST_PROPERTY_CODE" => array("", ""),
+        "LIST_PROPERTY_CODE_MOBILE" => array(),
+        "LIST_SHOW_SLIDER" => "Y",
+        "LIST_SLIDER_INTERVAL" => "3000",
+        "LIST_SLIDER_PROGRESS" => "N",
+        "LOAD_ON_SCROLL" => "N",
+        "MESSAGE_404" => "",
+        "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+        "MESS_BTN_BUY" => "Купить",
+        "MESS_BTN_COMPARE" => "Сравнение",
+        "MESS_BTN_DETAIL" => "Подробнее",
+        "MESS_BTN_SUBSCRIBE" => "Подписаться",
+        "MESS_COMMENTS_TAB" => "Комментарии",
+        "MESS_DESCRIPTION_TAB" => "Описание",
+        "MESS_NOT_AVAILABLE" => "Нет в наличии",
+        "MESS_PRICE_RANGES_TITLE" => "Цены",
+        "MESS_PROPERTIES_TAB" => "Характеристики",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Товары",
+        "PAGE_ELEMENT_COUNT" => "30",
+        "PARTIAL_PRODUCT_PROPERTIES" => "N",
+        "PRICE_CODE" => array('BASE'),
+        "PRICE_VAT_INCLUDE" => "Y",
+        "PRICE_VAT_SHOW_VALUE" => "N",
+        "PRODUCT_ID_VARIABLE" => "id",
+        "PRODUCT_PROPERTIES" => array(),
+        "PRODUCT_PROPS_VARIABLE" => "prop",
+        "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+        "PRODUCT_SUBSCRIPTION" => "Y",
+        "SEARCH_CHECK_DATES" => "Y",
+        "SEARCH_NO_WORD_LOGIC" => "Y",
+        "SEARCH_PAGE_RESULT_COUNT" => "50",
+        "SEARCH_RESTART" => "N",
+        "SEARCH_USE_LANGUAGE_GUESS" => "Y",
+        "SECTIONS_SHOW_PARENT_NAME" => "Y",
+        "SECTIONS_VIEW_MODE" => "LIST",
+        "SECTION_ADD_TO_BASKET_ACTION" => "ADD",
+        "SECTION_BACKGROUND_IMAGE" => "-",
+        "SECTION_COUNT_ELEMENTS" => "Y",
+        "SECTION_ID_VARIABLE" => "SECTION_ID",
+        "SECTION_TOP_DEPTH" => "2",
+        "SEF_FOLDER" => "/catalog/",
+        "SEF_MODE" => "Y",
+        "SEF_URL_TEMPLATES" => Array(
+            "compare" => "compare.php?action=#ACTION_CODE#",
+            "element" => "#SECTION_ID#/#ELEMENT_ID#/",
+            "section" => "#SECTION_ID#/",
+            "sections" => "",
+            "smart_filter" => "#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/"
+        ),
+        "SET_LAST_MODIFIED" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "SHOW_DEACTIVATED" => "N",
+        "SHOW_DISCOUNT_PERCENT" => "N",
+        "SHOW_MAX_QUANTITY" => "N",
+        "SHOW_OLD_PRICE" => "N",
+        "SHOW_PRICE_COUNT" => "1",
+        "SHOW_TOP_ELEMENTS" => "Y",
+        "SIDEBAR_DETAIL_SHOW" => "N",
+        "SIDEBAR_PATH" => "",
+        "SIDEBAR_SECTION_SHOW" => "Y",
+        "TEMPLATE_THEME" => "blue",
+        "TOP_ADD_TO_BASKET_ACTION" => "ADD",
+        "TOP_ELEMENT_COUNT" => "20",
+        "TOP_ELEMENT_SORT_FIELD" => "sort",
+        "TOP_ELEMENT_SORT_FIELD2" => "id",
+        "TOP_ELEMENT_SORT_ORDER" => "asc",
+        "TOP_ELEMENT_SORT_ORDER2" => "desc",
+        "TOP_ENLARGE_PRODUCT" => "STRICT",
+        "TOP_LINE_ELEMENT_COUNT" => "3",
+        "TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons,compare",
+        "TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+        "TOP_PROPERTY_CODE" => array("", ""),
+        "TOP_PROPERTY_CODE_MOBILE" => array(),
+        "TOP_SHOW_SLIDER" => "Y",
+        "TOP_SLIDER_INTERVAL" => "3000",
+        "TOP_SLIDER_PROGRESS" => "N",
+        "TOP_VIEW_MODE" => "SECTION",
+        "USE_BIG_DATA" => "Y",
+        "USE_COMMON_SETTINGS_BASKET_POPUP" => "N",
+        "USE_COMPARE" => "N",
+        "USE_ELEMENT_COUNTER" => "Y",
+        "USE_ENHANCED_ECOMMERCE" => "N",
+        "USE_FILTER" => "N",
+        "USE_GIFTS_DETAIL" => "Y",
+        "USE_GIFTS_MAIN_PR_SECTION_LIST" => "Y",
+        "USE_GIFTS_SECTION" => "Y",
+        "USE_MAIN_ELEMENT_SECTION" => "N",
+        "USE_PRICE_COUNT" => "N",
+        "USE_PRODUCT_QUANTITY" => "N",
+        "USE_REVIEW" => "N",
+        "USE_SALE_BESTSELLERS" => "Y",
+        "USE_STORE" => "N"
+    )
+);?>
 
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item1.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item2.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item3.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item1.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item2.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item3.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item1.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item2.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-                <article class="item">
-                    <div class="item__pic">
-                        <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item3.png" alt=""></a>
-                    </div>
-                    <div class="item__descr">
-                        <div class="item__title">
-                            <a href="#" class="section-subtitle">Vaber Jinish Very Stylish</a>
-                        </div>
-                        <ul class="item__rating">
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                            <li class="item__star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </li>
-                        </ul>
-                        <div class="section-price">
-                            $255
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- / ========= products ========= \ -->
-    <section class="products">
-        <div class="container">
-            <h2 class="section-title">
-                products collections
-            </h2>
-            <p class="section-descr products-descr text-center">
-                Check out popular products in our shop!
-            </p>
-            <div class="categories">
-                <a href="#" class="all active" data-cat="all">
-                    all
-                </a>
-                <a href="#" data-cat="mens">
-                    mens
-                </a>
-                <a href="#" data-cat="womens">
-                    womens
-                </a>
-                <a href="#" data-cat="kids">
-                    kids
-                </a>
-            </div>
-
-            <div class="products-list">
-
-                <!-- / ======== ALL ======== \ -->
-
-                <div class="products-list-all">
-
-                    <article class="product" data-cat="all">
-                        <a href="#" class="product__overlay" data-id="1">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item1.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">all black jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="all" >
-                        <a href="#" class="product__overlay" data-id="2">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">all red bag</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="all">
-                        <a href="#" class="product__overlay" data-id="3">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">all blue jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="all">
-                        <a href="#" class="product__overlay" data-id="4">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item4.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">all yellow clock</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="all">
-                        <a href="#" class="product__overlay" data-id="5">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item5.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">all brown belt</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="all">
-                        <a href="#" class="product__overlay" data-id="6">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item6.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">all black snickers</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <a href="#" class="products-btn" data-cat="all">
-                        more
-                    </a>
-
-                </div>
-
-                <!-- / ======== MENS ======== \ -->
-
-                <div class="products-list-mens">
-
-                    <article class="product" data-cat="mens">
-                        <a href="#" class="product__overlay" data-id="7">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item1.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">mens black jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="mens">
-                        <a href="#" class="product__overlay" data-id="8">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">mens red bag</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="mens">
-                        <a href="#" class="product__overlay" data-id="9">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">mens blue jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="mens">
-                        <a href="#" class="product__overlay" data-id="10">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item4.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">mens yellow clock</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="mens">
-                        <a href="#" class="product__overlay" data-id="11">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item5.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">mens brown belt</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="mens">
-                        <a href="#" class="product__overlay" data-id="12">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item6.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">mens black snickers</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <a href="#" class="products-btn" data-cat="mens">
-                        more
-                    </a>
-
-                </div>
-
-                <!-- / ======== WOMENS ======== \ -->
-
-                <div class="products-list-womens">
-
-                    <article class="product" data-cat="womens">
-                        <a href="#" class="product__overlay" data-id="13">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item1.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">womens black jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="womens">
-                        <a href="#" class="product__overlay" data-id="14">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">womens red bag</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="womens">
-                        <a href="#" class="product__overlay" data-id="15">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">womens blue jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="womens">
-                        <a href="#" class="product__overlay" data-id="16">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item4.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">womens yellow clock</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="womens">
-                        <a href="#" class="product__overlay" data-id="17">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item5.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">womens brown belt</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="womens">
-                        <a href="#" class="product__overlay" data-id="18">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item6.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">womens black snickers</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <a href="#" class="products-btn" data-cat="womens">
-                        more
-                    </a>
-
-                </div>
-
-                <!-- / ======== KIDS ======== \ -->
-
-                <div class="products-list-kids">
-
-                    <article class="product" data-cat="kids">
-                        <a href="#" class="product__overlay" data-id="19">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item1.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">kids black jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="kids">
-                        <a href="#" class="product__overlay" data-id="20">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/feature-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">kids red bag</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="kids">
-                        <a href="#" class="product__overlay" data-id="21">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item3.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">kids blue jacket</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="kids">
-                        <a href="#" class="product__overlay" data-id="22">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item4.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">kids yellow clock</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="kids">
-                        <a href="#" class="product__overlay" data-id="23">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item5.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">kids brown belt</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product" data-cat="kids">
-                        <a href="#" class="product__overlay" data-id="24">add to cart</a>
-                        <a href="#" class="product__pic">
-                            <img src="<?=SITE_TEMPLATE_PATH?>/img/product/product-item6.png" class="product__img" alt="">
-                        </a>
-                        <div class="product__descr">
-                            <div class="product__subtitle">
-                                <a href="#" class="section-subtitle">kids black snickers</a>
-                            </div>
-                            <p class="section-descr">
-                                Valo lagla kinen na kinla poth mapen
-                            </p>
-                            <div class="section-price product__price">
-                                $28
-                            </div>
-                        </div>
-                    </article>
-
-                    <a href="#" class="products-btn" data-cat="kids">
-                        more
-                    </a>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- / ========= subscribe ========= \ -->
-    <section class="subscribe">
-        <div class="container">
-            <h2 class="section-title">
-                subscribe to our newsletter
-            </h2>
-            <p class="section-descr subscribe-descr">
-                Only our latest news to send your email address
-            </p>
-            <form action="">
-                <input type="email" placeholder="Enter your email addres">
-                <input type="submit" value="Subscribe">
-            </form>
-        </div>
-    </section>
-
-    <!-- / ========= news ========= \ -->
-    <section class="news">
-        <div class="container">
-            <div class="section-title">
-                latest new's
-            </div>
-            <div class="section-descr news-descr">
-                Read latests new’s in our blog
-            </div>
-            <div class="row">
-                <div class="col-lg-5 margin-phone">
-                    <div class="news1">
-                        <div class="news1-pic">
-                            <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/news/news1.jpg" alt=""></a>
-                        </div>
-                        <div class="news1-descr">
-                            <div class="news-subtitle">
-                                <a href="#" class="section-subtitle">Top kamla of this year!</a>
-                            </div>
-                            <p class="section-descr">
-                                Ashole uni kamla noy uni VONDU & uni dami pc use kore so unar digayn o dami. Typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                            </p>
-                            <a href="#" class="news-link">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="column-2">
-                        <div class="news2">
-                            <div class="news2-pic">
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/news/news2.jpg" alt=""></a>
-                            </div>
-                            <div class="news2-descr">
-                                <div class="news-subtitle">
-                                    <a href="#" class="section-subtitle">Specialize in Mobile and Web UI/UX!</a>
-                                </div>
-                                <p class="section-descr">
-                                    Kotha sotto blv it or not, is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. ever. since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-                                </p>
-                            </div>
-                        </div>
-                        <div class="news3">
-                            <div class="news3-pic">
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/news/news3.jpg" alt=""></a>
-                            </div>
-                            <div class="news3-descr">
-                                <div class="news-subtitle">
-                                    <a href="#" class="section-subtitle">Best photo of this month!</a>
-                                </div>
-                                <p class="section-descr">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. ever. since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<?
+$APPLICATION->IncludeComponent(
+    "bitrix:catalog.section",
+    "",
+    array(
+        "ACTION_VARIABLE" => "action",
+        "ADD_PICT_PROP" => "-",
+        "ADD_PROPERTIES_TO_BASKET" => "Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "ADD_TO_BASKET_ACTION" => "ADD",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "BACKGROUND_IMAGE" => "-",
+        "BASKET_URL" => "/personal/basket.php",
+        "BROWSER_TITLE" => "-",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "COMPATIBLE_MODE" => "Y",
+        "CONVERT_CURRENCY" => "N",
+        "CUSTOM_FILTER" => "",
+        "DETAIL_URL" => "",
+        "DISABLE_INIT_JS_IN_COMPONENT" => "N",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_COMPARE" => "N",
+        "DISPLAY_TOP_PAGER" => "N",
+        "ELEMENT_SORT_FIELD" => "sort",
+        "ELEMENT_SORT_FIELD2" => "id",
+        "ELEMENT_SORT_ORDER" => "asc",
+        "ELEMENT_SORT_ORDER2" => "desc",
+        "ENLARGE_PRODUCT" => "STRICT",
+        "FILTER_NAME" => "arrFilter",
+        "HIDE_NOT_AVAILABLE" => "N",
+        "HIDE_NOT_AVAILABLE_OFFERS" => "N",
+        "IBLOCK_ID" => "1",
+        "IBLOCK_TYPE" => "catalog",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "LABEL_PROP" => array(
+        ),
+        "LAZY_LOAD" => "N",
+        "LINE_ELEMENT_COUNT" => "3",
+        "LOAD_ON_SCROLL" => "N",
+        "MESSAGE_404" => "",
+        "MESS_BTN_ADD_TO_BASKET" => "В корзину",
+        "MESS_BTN_BUY" => "Купить",
+        "MESS_BTN_DETAIL" => "Подробнее",
+        "MESS_BTN_SUBSCRIBE" => "Подписаться",
+        "MESS_NOT_AVAILABLE" => "Нет в наличии",
+        "META_DESCRIPTION" => "-",
+        "META_KEYWORDS" => "-",
+        "OFFERS_LIMIT" => "5",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Товары",
+        "PAGE_ELEMENT_COUNT" => "6",
+        "PARTIAL_PRODUCT_PROPERTIES" => "N",
+        "PRICE_CODE" => array('BASE'),
+        "PRICE_VAT_INCLUDE" => "Y",
+        "PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons,compare",
+        "PRODUCT_ID_VARIABLE" => "id",
+        "PRODUCT_PROPERTIES" => array(
+        ),
+        "PRODUCT_PROPS_VARIABLE" => "prop",
+        "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+        "PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+        "PRODUCT_SUBSCRIPTION" => "Y",
+        "PROPERTY_CODE" => array(
+            0 => "",
+            1 => "",
+        ),
+        "PROPERTY_CODE_MOBILE" => array(
+        ),
+        "RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
+        "RCM_TYPE" => "personal",
+        "SECTION_CODE" => "",
+        "SECTION_CODE_PATH" => "",
+        "SECTION_ID" => $_REQUEST["SECTION_ID"],
+        "SECTION_ID_VARIABLE" => "SECTION_ID",
+        "SECTION_URL" => "",
+        "SECTION_USER_FIELDS" => array(
+            0 => "",
+            1 => "",
+        ),
+        "SEF_MODE" => "Y",
+        "SEF_RULE" => "",
+        "SET_BROWSER_TITLE" => "Y",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "Y",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "SHOW_ALL_WO_SECTION" => "Y",
+        "SHOW_CLOSE_POPUP" => "N",
+        "SHOW_DISCOUNT_PERCENT" => "N",
+        "SHOW_FROM_SECTION" => "N",
+        "SHOW_MAX_QUANTITY" => "N",
+        "SHOW_OLD_PRICE" => "N",
+        "SHOW_PRICE_COUNT" => "1",
+        "SHOW_SLIDER" => "Y",
+        "SHOW_ALL_WO_SECTION" => "Y",
+        "SLIDER_INTERVAL" => "3000",
+        "SLIDER_PROGRESS" => "N",
+        "TEMPLATE_THEME" => "blue",
+        "USE_ENHANCED_ECOMMERCE" => "N",
+        "USE_MAIN_ELEMENT_SECTION" => "N",
+        "USE_PRICE_COUNT" => "N",
+        "USE_PRODUCT_QUANTITY" => "N",
+        "COMPONENT_TEMPLATE" => "main-prod"
+    ),
+    false
+);
+?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

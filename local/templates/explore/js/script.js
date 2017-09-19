@@ -22,48 +22,6 @@ $('.owl-carousel').owlCarousel({
 	}
 });
 
-//Tabs(фильтр товаров)
-
-var Filter = {
-	//Сортирует элементы по категориям
-	sort: function(items) {
-		items.fadeIn(500);
-		var list = $('.products-list');
-		list.find('.product').not(items).hide();
-		list.find('.products-btn').not(items).hide();
-	},
-	//Показывает все товары
-	showAll: function(items) {
-		items.fadeIn(500);
-	},
-	//Определяет выбор категории
-	doSort: function() {
-		$(window).on('load', function() {
-			$('.product, .products-btn').hide();
-			$('[data-cat = all]').show();
-		});
-		$('a', '.categories').on('click', function(event) {
-
-			var $a = $(this);
-
-
-			var items = $('[data-cat=' + $a.data('cat') + ']', '.products-list');
-
-			Filter.sort(items);
-
-			//Добавляем категории вид активной ссылки
-			$('.categories').find('a.active').removeClass('active');
-			$a.addClass('active');
-
-			event.preventDefault();
-
-		});
-	}
-};
-
-//Вызывает метод по клику
-Filter.doSort();
-
 //Phone-menu
 $('.phone-menu').on('click', function() {
 
@@ -109,5 +67,73 @@ $(function(){
 		return false;
 	});
 });
+
+//Main catalog ajax
+//     $('.products-btn').on('click', function(e) {
+//     	let curPage = 1;
+//     	let loadUrl = location.href;
+//         if(location.search != ''){
+//             loadUrl += '&';
+//         }
+//         else{
+//             loadUrl += '?';
+//         }
+//         loadUrl  += 'PAGEN_'+ 1 +'=' + (++curPage);
+//         $.ajax({
+// 			type: "POST",
+// 			url: loadUrl,
+// 			data: {
+//
+// 			},
+// 			success: function(){
+//                 alert('!!!');
+// 			}
+//         }).done(function(data) {
+//             $('.products-list').append(data);
+//         });
+//         e.preventDefault();
+// 	});
+
+    function newsLoader(p){
+        var o = this;
+        this.root = $(p.root);
+        this.newsBlock = $(p.newsBlock, this.root);
+        this.newsLoader = $(p.newsLoader);
+        this.ajaxLoader = $(p.ajaxLoader);
+        this.curPage = 1;
+        this.loadSett = (p.loadSett);
+        // загружаем дополнительные новости
+        this.loadProducts = function(){
+            var loadUrl = location.href;
+            if(location.search != ''){
+                loadUrl += '&';
+            }
+            else{
+                loadUrl += '?';
+            }
+            loadUrl  += 'PAGEN_'+ o.loadSett.navNum +'=' + (++o.curPage);
+            o.ajaxLoader.show();
+            $.ajax({
+                url: loadUrl,
+                type: "POST",
+                data:{
+                    AJAX: 'Y'
+                }
+            }).done(function(html) {
+                o.newsBlock.append(html);
+                o.ajaxLoader.hide();
+
+                if(o.curPage == o.loadSett.endPage){
+                    o.newsLoader.parent().hide();
+                }
+            });
+        }
+        this.init = function(){
+            o.newsLoader.click(function(event){
+                o.loadProducts();
+                event.preventDefault();
+            })
+        }
+    }
 
 });

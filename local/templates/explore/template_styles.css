@@ -427,10 +427,7 @@ footer {
 }
 
 .products-list-catalog,
-.products-list-all,
-.products-list-mens,
-.products-list-womens,
-.products-list-kids {
+.products-list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -444,10 +441,7 @@ footer {
           justify-content: space-between;
   position: relative; }
   @media screen and (max-width: 576px) {
-    .products-list-all,
-    .products-list-mens,
-    .products-list-womens,
-    .products-list-kids {
+    .products-list {
       margin-bottom: 0; } }
 
 .product {
@@ -496,7 +490,7 @@ footer {
 .product__overlay:hover {
   color: #fff; }
 
-.product__pic {
+.product__pic a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
